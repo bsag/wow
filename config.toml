@@ -19,8 +19,8 @@ paginate = 20
 [params]
 	author = "bsag"
 	description = "A collection of photographs that I'm relatively proud of."
-	imgurl = "img/"
-	thumbimgurl = "img/thumbs/"
+	imgurl = "https://wingsopenwide-images.s3.amazonaws.com/"
+	thumbimgurl = "https://wingsopenwide-images.s3.amazonaws.com/thumbs/"
 	# The keywords will be added as a meta tag. Delimit them with a comma.
 	keywords = ""
 	# Either show custom avatar on the top
