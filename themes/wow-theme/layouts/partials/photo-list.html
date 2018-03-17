@@ -1,0 +1,16 @@
+	{{ $baseurl := .Site.BaseURL }}
+	{{ $thumb := .Site.Params.thumbimgurl }}
+
+	
+	 {{ partial "breadcrumb.html" . }}
+	<div class="mt4">
+		<div class="flex flex-wrap items-start justify-center">
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "photo") 20 }}
+	{{ range $paginator.Pages -}}
+				<a href="{{ .Permalink }}" class="h9 h9-m h5-l mw-100 mw6-l mr2 mb2 contain" data-tooltip="{{ .Title }}">
+					<img src="{{ $baseurl }}{{ $thumb }}{{ .Params.imageurl | safeURL }}" class="w-100 h9 h-100-l">
+				</a>
+	{{- end }}
+		</div><!-- masonry -->
+	</div><!-- container for masonry -->
+

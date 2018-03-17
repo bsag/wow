@@ -1,0 +1,15 @@
+{{ $baseurl := .Site.BaseURL }}
+<div class="w-100 w-70-m w-60-l mt4 center">
+    {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "essay") 20 }}
+    {{ range $paginator.Pages -}}
+    <article class="mb5">
+        <h2 class="f3 lh-title">
+            <a href="{{ .Permalink }}" class="link near-black hover-teal">
+                {{ .Title }}
+            </a>
+        </h2>
+        <p>{{ .Description }}</p>
+        <footer class="f5 moon-gray">Posted: {{ .Date.Format "02/01/2006" }}</footer>
+    </article>
+    {{- end }}
+</div><!-- masonry -->

@@ -1,0 +1,22 @@
+<div class="flex items-center justify-between contain mt4">
+    <div class="fl w-50 pa2 tl">
+        {{ if .PrevInSection -}}
+        <a href="{{ .PrevInSection.Permalink }}" class="link dim">
+            <div class="gray"><i class="fas fa-chevron-left fa-sm"></i> {{ .Site.Data.l10n.previous }}</div>
+            <div class="teal f4 b lh-title">{{ .PrevInSection.Title }}</div>
+        </a>
+        {{ else -}}
+        &nbsp;
+        {{ end -}}
+    </div>
+        {{ if .NextInSection -}}
+    <div class="fl w-50 pa2 tr">
+        <a href="{{ .NextInSection.Permalink }}" class="link teal dim">
+            <div class="gray">{{ .Site.Data.l10n.next }} <i class="fas fa-chevron-right fa-sm"></i></div>
+            <div class="teal f4 b lh-title">{{ .NextInSection.Title }}</div>
+        </a>
+        {{ else -}}
+        &nbsp;
+        {{ end -}}
+    </div>
+</div><!-- #paginator -->

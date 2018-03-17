@@ -1,0 +1,18 @@
+<footer class="mv4 f6 f5-ns">
+    <div class="tc gray">
+        <a href="mailto:butshesagirl@rousette.org.uk" class="mh1 gray link hover-teal" alt="Email me">
+            <i class="fas fa-envelope"></i>
+        </a> &middot; 
+        <a href="{{ .Site.Params.social.twitter | safeURL }}" class="mh1 gray link hover-teal" alt="Twitter account">
+            <i class="fab fa-twitter"></i>
+        </a> &middot; 
+        <a href="{{ .Site.BaseURL}}index.xml" class="mh1 gray link hover-teal" alt="RSS feed for this site">
+            <i class="fas fa-rss"></i>
+        </a> &middot; 
+        <span class="mh1 gray">&copy; bsag {{ now.Format "2006" }} &middot; 
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="link gray hover-teal small-caps">cc by-nc-sa</a>
+        </span>
+    </div>
+</footer>
+
+{{ template "_internal/google_analytics.html" . }}

@@ -1,0 +1,29 @@
+<div class="flex items-center justify-between contain">
+	{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) -}}
+		{{ if .Paginator.HasPrev -}}
+			<div class="fl w-50 pa2 tl">
+				<a href="{{ .Paginator.Prev.URL }}" class="link teal dim">
+					<i class="fas fa-chevron-left fa-sm"></i>
+					{{ .Site.Data.l10n.previous }}
+				</a>
+			</div>
+		{{ else }}
+			<div class="fl w-50 pa2 tl">
+				&nbsp;
+			</div>
+		{{- end }}
+
+		{{ if .Paginator.HasNext -}}
+			<div class="fl w-50 pa2 tr">
+				<a href="{{ .Paginator.Next.URL }}" class="link teal dim">
+					{{ .Site.Data.l10n.next }}
+					<i class="fas fa-chevron-right fa-sm"></i>
+				</a>
+			</div>
+		{{ else }}
+			<div class="fl w-50 pa2 tl">
+				&nbsp;
+			</div>
+		{{- end }}
+	{{- end }}
+</div>

@@ -1,0 +1,77 @@
+{{ define "main" -}}
+
+{{ $baseurl := .Site.BaseURL }}
+{{ $img := .Site.Params.imgurl }}
+
+<div class="mw-100 mw-90-l">
+	<figure class="mw-100 mw-80-l flex flex-column justify-center">
+		<img class="center contain" src="{{ $baseurl }}{{ $img }}{{ .Params.imageurl | safeURL }}" class="" style="max-height: 85vh;">
+
+		<figcaption class="flex justify-center mt1">
+			<section class="tl mr4">
+				<span class="title">{{ .Title }}</span>
+			</section>
+
+			<section class="tc mr4">
+			<div class="hide-child">
+				<a class="link gray hover-teal">
+					<i class="fas fa-info-circle"></i>
+				</a>
+				<div class="child wow-popover white pa3 bg-black-60 tl">
+					<span class="f5 f4-l lh-copy tl i">{{ .Params.description }}</span>
+					<table class="mt3">
+						<tbody>
+							<tr>
+								<td class="tr pr2">Aperture</td>
+								<td>{{ .Params.aperture }}</td>
+							</tr>
+							<tr>
+								<td class="tr pr2">Speed</td>
+								<td>{{ .Params.speed }}</td>
+							</tr>
+							<tr>
+								<td class="tr pr2">Film speed</td>
+								<td>{{ .Params.iso }}</td>
+							</tr>
+							<tr>
+								<td class="tr pr2">Exposure comp.</td>
+								<td>{{ .Params.expcomp }}</td>
+							</tr>
+							<tr>
+								<td class="tr pr2">Camera</td>
+								<td>{{ .Params.camera }}</td>
+							</tr>
+							<tr>
+								<td class="tr pr2">Taken on</td>
+								<td>{{ dateFormat "02/01/2006" .Params.taken_on }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- popover-container -->
+			</section>
+
+			<section class="tr mr4">
+				<span class="f6">
+					{{ if isset .Params "tags" -}}
+						{{ $tagsLen := len .Params.tags }} 
+							{{ if gt $tagsLen 0 -}} 
+								{{ range $k, $v := (sort .Params.tags) -}}
+									<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}" 
+										class="link near-black bg-moon-gray hover-bg-gold br-pill ph2 mr2">{{ . }}</a>
+							{{- end }} 
+						{{- end }}
+					{{- end }}
+				</span>
+			</section>
+
+		</figcaption>
+	</figure>
+</div>
+
+{{ partial "single-pagination" . }}
+
+<!-- <div class="w-100 w-90-m w-60-l center mt5"> -->
+	<!-- {{ partial "post-comments" . }} -->
+<!-- </div> -->
+
+{{- end }}

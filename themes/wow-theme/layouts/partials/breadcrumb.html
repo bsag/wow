@@ -1,0 +1,10 @@
+{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} 
+{{ $.Scratch.Add "path" .Site.BaseURL }}
+<h3 class="f4 f3 lh-title">
+    {{ range $index, $element := split $url "/" }} {{ $.Scratch.Add "path" $element }} 
+        {{ if ne $element "" }}
+            <a href="{{ $.Scratch.Get "path" }}" class="link near-black hover-teal mr1 ttc">{{ . | humanize }}</a> <i class="fas fa-chevron-right fa-sm mr1"></i>
+            {{ $.Scratch.Add "path" "/" }} 
+        {{ end }}
+    {{ end }}
+</h3>

@@ -1,0 +1,16 @@
+{{ define "main" -}}
+{{ $baseurl := .Site.BaseURL }}
+    <div class="w-100 w-50-l center mt4">
+        <h2 class="title f3 lh-title">{{ .Title }}</h2>
+            <ul class="list pl0">
+                {{ $data := .Data }} 
+                {{ range $key, $value := .Data.Terms.ByCount }}
+                <li class="dib mr2">
+                    <a href="{{ $baseurl }}tags/{{ $value.Name | urlize }}" 
+                    class="link near-black hover-teal">{{ $value.Name }}</a> ({{ $value.Count }})
+                </li>
+                <span class="mr2 moon-gray">/</span>
+                {{ end }}
+            </ul>
+    </div><!-- container for masonry -->
+{{ end -}}

@@ -1,0 +1,17 @@
+{{ define "main" -}}
+{{ $baseurl := .Site.BaseURL }}
+
+<div class="ww-100 w-70-m w-60-l mt4 center">
+
+    <h3 class="f3 lh-title">{{ .Title }}</h3>
+
+    <div>
+        {{ .Content }}
+    </div>
+</div>
+
+<div class="w-90-m w-60-l center mt5">
+    {{ partial "post-comments" . }}
+</div>
+
+{{- end }}

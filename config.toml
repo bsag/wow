@@ -1,0 +1,59 @@
+baseurl = "https://photos.rousette.org.uk/"
+languageCode = "en-us"
+title = "wings open wide"
+theme = "wow-theme"
+copyright = "This work is licensed under a Creative Commons Attribution-Non-Commercial ShareAlike 4.0 International License."
+
+[taxonomies]
+	tag = "tags"
+	album = "albums"
+
+# Enable comments by entering your Disqus shortname
+#disqusShortname = "spf13"
+# Add your tracking code to enable Google Analytics
+googleAnalytics = ""
+# Posts per page
+paginate = 20
+
+
+[params]
+	author = "bsag"
+	description = "A collection of photographs that I'm relatively proud of."
+	imgurl = "img/"
+	thumbimgurl = "img/thumbs/"
+	# The keywords will be added as a meta tag. Delimit them with a comma.
+	keywords = ""
+	# Either show custom avatar on the top
+	# left by adding the filename in below
+	gravatar = "butshesagirl@rousette.org.uk"
+	# or use Gravatar by adding your email address to generate a unique avatar
+	#gravatar = "your@email.com"
+
+	copyright = '<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA Licence</a>'
+
+
+	[params.social]
+		# Insert your accout name and the icon will be shown in the right menu
+		rss = true
+		homepage = true
+		email = "butshesagirl@rousette.org.uk"
+		behance = ""
+		bitbucket  =""
+		dribbble = ""
+		facebook = ""
+		flickr = "bsag"
+		github = "bsag"
+		googleplus = ""
+		instagram = "bsag"
+		linkedin = ""
+		pinterest = "bsag"
+		reddit = ""
+		soundcloud = ""
+		stackexchange = ""
+		steam = ""
+		tumblr = ""
+		twitter = "https://twitter.com/bsag/"
+		wordpress = ""
+		youtube = ""
+		# Insert your Xing Profile-ID not your login name
+		xing = ""
