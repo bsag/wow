@@ -1,14 +1,28 @@
-<header class="ph3 ph0-l center flex items-center justify-between contain">
+<!-- <header class="ph3 ph0-l center flex items-center justify-between contain">
     <section class="">
-        <h1 class="f3 f2-ns lh-title">
+        <h1 class="f5 f2-ns lh-title">
             <a href="{{ .Site.BaseURL }}" class="link teal dim">{{ .Site.Title }}</a>
         </h1>
     </section>
 
-    <section class="db-l f5 f4-ns lh-title">
+    <section class="db-l f6 f4-ns lh-title">
         <a href="{{ .Site.BaseURL }}albums/" class="link gray hover-bg-gold br2 pv1 ph2 ml2">albums</a>
         <a href="{{ .Site.BaseURL }}tags/" class="link gray hover-bg-gold br2 pv1 ph2 ml2">tags</a>
         <a href="{{ .Site.BaseURL }}essay/" class="link gray hover-bg-gold br2 pv1 ph2 ml2">essays</a>
         <a href="{{ .Site.BaseURL }}about/" class="link gray hover-bg-gold br2 pv1 ph2 ml2">about</a>
     </section>
-</header>
+</header> -->
+
+<nav class="db dt-l w-100 border-box pa3 ph5-l">
+    <h1 class="f5 f4-m f2-l lh-title">
+        <a class="db dtc-l v-mid teal link dim w-100 w-50-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
+        {{ .Site.Title }}
+        </a>
+    </h1>
+    <div class="f6 f5-m f4-l lh-title db dtc-l v-mid w-100 w-50-l tc tr-l">
+        <a class="link gray hover-bg-gold br2 pv1 ph2 dib mr2 mr3-l" href="{{ .Site.BaseURL }}albums/" title="Albums">albums</a>
+        <a class="link gray hover-bg-gold br2 pv1 ph2 dib mr2 mr3-l" href="{{ .Site.BaseURL }}tags/" title="Tags">tags</a>
+        <a class="link gray hover-bg-gold br2 pv1 ph2 dib mr2 mr3-l" href="{{ .Site.BaseURL }}essay/" title="Essays">essays</a>
+        <a class="link gray hover-bg-gold br2 pv1 ph2 dib mr2 mr3-l" href="{{ .Site.BaseURL }}about/" title="About">about</a>
+    </div>
+</nav>
