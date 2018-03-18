@@ -13,6 +13,11 @@
     color: #008080;
 }
 
+.mv-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .wow-popover {
     position: absolute;
     left: 0;
