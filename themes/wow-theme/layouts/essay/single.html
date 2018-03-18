@@ -4,14 +4,15 @@
 <div class="ww-100 w-70-m w-60-l mt4 center">
 
     <h3 class="f3 lh-title">{{ .Title }}</h3>
+    <div class="f6 moon-gray">{{ dateFormat "02/01/2006" .Params.date }}</div>
 
-    <div>
+    <div class="f5 lh-copy">
         {{ .Content }}
     </div>
 </div>
 
-<div class="w-90-m w-60-l center mt5">
-    {{ partial "post-comments" . }}
-</div>
+<!-- <div class="w-90-m w-60-l center mt5"> -->
+    <!-- {{ partial "post-comments" . }} -->
+<!-- </div> -->
 
 {{- end }}
