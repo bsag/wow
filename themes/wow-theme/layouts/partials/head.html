@@ -11,12 +11,15 @@
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
     {{ .Hugo.Generator }}
-    
-    {{ range .AlternativeOutputFormats -}}
-        <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
-    {{ end -}}
+
+    <link rel="canonical" href="{{ .URL | absLangURL }}" /> {{- if .RSSLink }}
+    <link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}"> {{- else }}
+    <link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}"> {{- end }}
 
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+     {{- if .Site.Params.staticman -}}
+    <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" /> 
+    {{- end -}}
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<!-- <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico" type="image/x-icon"> -->

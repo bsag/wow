@@ -70,8 +70,17 @@
 
 {{ partial "single-pagination" . }}
 
-<!-- <div class="w-100 w-90-m w-60-l center mt5"> -->
-	<!-- {{ partial "post-comments" . }} -->
-<!-- </div> -->
+{{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }} 
+	{{ if .Site.DisqusShortname }}
+	<div class="disqus-comments w-100 w-90-m w-60-l mt5">
+		{{ template "_internal/disqus.html" . }}
+	</div>
+	{{ end }}
+	{{ if .Site.Params.staticman }}
+	<div class="staticman-comments">
+		{{ partial "post-comments.html" . }}
+	</div>
+	{{ end }} 
+{{ end }}
 
 {{- end }}

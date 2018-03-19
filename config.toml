@@ -21,6 +21,7 @@ paginate = 20
 	description = "A collection of photographs that I'm relatively proud of."
 	imgurl = "https://wingsopenwide-images.s3.amazonaws.com/"
 	thumbimgurl = "https://wingsopenwide-images.s3.amazonaws.com/thumbs/"
+	comments = true
 	# The keywords will be added as a meta tag. Delimit them with a comma.
 	keywords = ""
 	# Either show custom avatar on the top
@@ -37,23 +38,12 @@ paginate = 20
 		rss = true
 		homepage = true
 		email = "butshesagirl@rousette.org.uk"
-		behance = ""
-		bitbucket  =""
-		dribbble = ""
-		facebook = ""
 		flickr = "bsag"
 		github = "bsag"
-		googleplus = ""
 		instagram = "bsag"
-		linkedin = ""
 		pinterest = "bsag"
-		reddit = ""
-		soundcloud = ""
-		stackexchange = ""
-		steam = ""
-		tumblr = ""
 		twitter = "https://twitter.com/bsag/"
-		wordpress = ""
-		youtube = ""
-		# Insert your Xing Profile-ID not your login name
-		xing = ""
+
+	[params.staticman]
+		api = "https://api.staticman.net/v2/entry/bsag/wow/master/comments"
+		pulls = "https://github.com/bsag/wow/pulls"

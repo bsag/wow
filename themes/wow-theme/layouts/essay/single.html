@@ -11,8 +11,10 @@
     </div>
 </div>
 
-<!-- <div class="w-90-m w-60-l center mt5"> -->
-    <!-- {{ partial "post-comments" . }} -->
-<!-- </div> -->
+	{{ if .Site.Params.staticman }}
+	<div class="staticman-comments">
+		{{ partial "post-comments.html" . }}
+	</div>
+	{{ end }} 
 
 {{- end }}
