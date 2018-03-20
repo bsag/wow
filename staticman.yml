@@ -7,7 +7,7 @@ comments:
   allowedFields: ["name", "email", "website", "comment"]
   allowedOrigins: ["localhost", "wingsopenwide.org.uk"]
   branch            : "master"
-  commitMessage     : "New comment in {options.slug} ({options.origin}"
+  commitMessage     : "New comment in {options.slug} ({options.origin})"
   path: "data/comments/{options.slug}"
   filename          : "comment-{@timestamp}"
   format            : "yaml"
