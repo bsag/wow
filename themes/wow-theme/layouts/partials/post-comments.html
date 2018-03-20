@@ -27,7 +27,7 @@
     {{ end }}
     <div class="comment-timestamp mb2">
       <a href="#comment-{{ $.Scratch.Get "hasComments" }}" title="Permalink to this comment">
-        <time datetime="{{ .date }}" class="f6 link teal">{{ dateFormat "02/01/2006" .date}}</time>
+        <time datetime="{{ .date }}" class="f6 link teal">{{ dateFormat "02 Jan 2006 at 15:04" .date}}</time>
       </a>
     </div>
     <div class="comment-content">
@@ -40,8 +40,9 @@
 
   <h3>Make a comment</h3>
 
-  <form class="js-form form" method="post" action="{{ .Site.Params.staticman.api}}">
+  <form class="js-form" method="post" action="{{ .Site.Params.staticman.api }}">
     <input type="hidden" name="options[slug]" value="{{ replace .URL "/" "" }}">
+    <input type="hidden" name="options[origin]" value="{{ .Permalink }}">
     <input type="hidden" name="options[parent]" value=""> 
     {{ if .Site.Params.staticman.recaptcha }}
     <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
@@ -49,28 +50,26 @@
     {{ end }}
 
       <div class="textfield">
-        <textarea name="fields[comment]" type="text" placeholder="Your comment - use Markdown"></textarea>
+        <textarea class = "input-reset lh-copy" name="fields[comment]" type="text" placeholder="Comment. Markdown syntax works :-)"></textarea>
       </div>
 
       <div class="textfield">
-        <input name="fields[name]" type="text" placeholder="Your name"/>
+        <input class = "input-reset lh-copy" name="fields[name]" type="text" placeholder="Name"/>
       </div>
 
       <div class="textfield">
-        <input type="email" name="fields[email]" placeholder="Your email"/>
+        <input class = "input-reset lh-copy" type="email" name="fields[email]" placeholder="Email address (will not be shown publically)"/>
       </div>
 
       <div class="textfield">
-        <input type="text" name="fields[website]" placeholder="Your website (optional)"/>
+        <input class = "input-reset lh-copy" type="text" name="fields[website]" placeholder="Website (optional)"/>
       </div>
 
     {{ if .Site.Params.staticman.recaptcha }}
       <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
 
-      <button class="button mt2">
-        Submit
-      </button>
+      <input class="mt2 pv2 input-reset ba br3 b--black bg-transparent hover-bg-moon-gray pointer" type="submit" value="Send" />
   </form>
 </section>
 
