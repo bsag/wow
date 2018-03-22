@@ -9,7 +9,7 @@
 .hover-teal:hover, 
 .hover-teal:focus { color: #008080; }
 
-.post-content a {
+.post-content a, .comment-content a {
     color: #008080;
 }
 

@@ -16,13 +16,15 @@
       success: function (data) {
         showModal('Perfect !', 'Thanks for your comment! It will show on the site once it has been approved. .');
         $(form).removeClass('form--loading');
-        $(form).reset();
+        $(form).children('input').val('');
+        $('#send-button').val('Send');
       },
       error: function (err) {
         console.log(err);
         showModal('Error', 'Sorry, there was an error with the submission!');
         $(form).removeClass('form--loading');
-        $(form).reset();
+        $(form).children('input').val('');
+        $('#send-button').val('Send');
       }
     });
 

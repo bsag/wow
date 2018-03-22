@@ -16,31 +16,41 @@
   {{ range $index, $comments := (index $.Site.Data.comments $slug ) }} 
   {{ if not .parent }} 
   {{ $.Scratch.Add "hasComments" 1 }}
-  <article id="comment-{{ $.Scratch.Get "hasComments" }}" class="static-comment">
-    <img class="comment-avatar ba b--moon-gray br3" src="https://www.gravatar.com/avatar/{{ .email }}?s=48"> 
-    {{ if .website }}
-    <h4 class="comment-author">
-      <a rel="external nofollow" href="{{ .website }}" class="link teal">{{ .name }}</a>
-    </h4>
-    {{ else }}
-    <h4 class="comment-author">{{ .name }}</h4>
-    {{ end }}
-    <div class="comment-timestamp mb2">
-      <a href="#comment-{{ $.Scratch.Get "hasComments" }}" title="Permalink to this comment">
-        <time datetime="{{ .date }}" class="f6 link teal">{{ dateFormat "02 Jan 2006 at 15:04" .date}}</time>
-      </a>
-    </div>
-    <div class="comment-content">
-      <p>{{ .comment | markdownify }}</p>
-    </div>
-  </article>
+    <article id="comment-{{ $.Scratch.Get "hasComments" }}" class="mt4 w-100 mh2 mh0-ns">
+      <div class="dt w-100 pb2">
+        <div class="dt-row">
+        <div class="dtc w3 pr3">
+          <img src="https://www.gravatar.com/avatar/{{ .email }}" class="db w-100 ba b--moon-gray br2" />
+        </div>
+        <div class="dtc v-top pl2">
+          {{ if .website }}
+          <h4 class="f6 f5-ns fw6 lh-title black mv0">
+            <a rel="external nofollow" href="{{ .website }}" class="link teal">{{ .name }}</a>
+          </h4>
+          {{ else }}
+            <h4 class="f6 f5-ns fw6 lh-title black mv0">{{ .name }}</h4>
+          {{ end }}
+          <a href="#comment-{{ $.Scratch.Get "hasComments" }}" class="link moon-gray hover-teal" title="Permalink to this comment">
+            <time datetime="{{ .date }}" class="f6">{{ dateFormat "02 Jan 2006 at 15:04" .date}}</time>
+          </a>
+        </div>
+        </div><!-- table row -->
+        <div class="dt-row mt1">
+          <div class="dtc w3 pr3">&nbsp;</div>
+          <div class="comment-content dtc pl2">
+            <p>{{ .comment | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
   {{ end }} 
   {{ end }} 
   {{ end }}
 
+  <div class="mv5">
   <h3>Make a comment</h3>
 
-  <form class="js-form" method="post" action="{{ .Site.Params.staticman.api }}">
+  <form class="js-form w-100" method="post" action="{{ .Site.Params.staticman.api }}">
     <input type="hidden" name="options[slug]" value="{{ replace .URL "/" "" }}">
     <input type="hidden" name="options[origin]" value="{{ .Permalink }}">
     <input type="hidden" name="options[parent]" value=""> 
@@ -49,28 +59,25 @@
     <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.secret }}"> 
     {{ end }}
 
-      <div class="textfield">
-        <textarea class = "input-reset lh-copy" name="fields[comment]" type="text" placeholder="Comment. Markdown syntax works :-)"></textarea>
-      </div>
-
-      <div class="textfield">
-        <input class = "input-reset lh-copy" name="fields[name]" type="text" placeholder="Name"/>
-      </div>
-
-      <div class="textfield">
-        <input class = "input-reset lh-copy" type="email" name="fields[email]" placeholder="Email address (will not be shown publically)"/>
-      </div>
-
-      <div class="textfield">
-        <input class = "input-reset lh-copy" type="text" name="fields[website]" placeholder="Website (optional)"/>
-      </div>
+        <textarea class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+                  name="fields[comment]" rows="6" type="text" 
+                  placeholder="Comment. Markdown syntax works :-)"></textarea>
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+                name="fields[name]" type="text" placeholder="Name"/>
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+                type="email" name="fields[email]" 
+                placeholder="Email address (will not be shown publicly)"/>
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+               type="text" name="fields[website]" placeholder="Website (optional)"/>
 
     {{ if .Site.Params.staticman.recaptcha }}
       <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
 
-      <input class="mt2 pv2 input-reset ba br3 b--black bg-transparent hover-bg-moon-gray pointer" type="submit" value="Send" />
+      <input id="send-button" class="mt2 pv2 input-reset ba br3 b--gray bg-transparent hover-bg-moon-gray pointer" 
+                              type="submit" value="Send" />
   </form>
+  </div>
 </section>
 
 <article class="modal">
