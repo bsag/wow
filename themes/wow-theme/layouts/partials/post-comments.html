@@ -51,6 +51,9 @@
   <h3>Make a comment</h3>
 
   <form class="js-form w-100" method="post" action="{{ .Site.Params.staticman.api }}">
+    <div class="form__spinner mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active">
+      <img src="/images/ajax-loader.gif" alt="loading spinner">
+    </div>
     <input type="hidden" name="options[slug]" value="{{ replace .URL "/" "" }}">
     <input type="hidden" name="options[origin]" value="{{ .Permalink }}">
     <input type="hidden" name="options[parent]" value=""> 
