@@ -14,17 +14,14 @@
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
-        showModal('Perfect !', 'Thanks for your comment! It will show on the site once it has been approved. .');
+        showModal('Perfect !', 'Thanks for your comment! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/bsag/wow/pulls">here</a>.');
         $(form).removeClass('form--loading');
-        $(form).children('input').val('');
-        $('#send-button').val('Send');
+        $(form).trigger("reset");
       },
       error: function (err) {
         console.log(err);
         showModal('Error', 'Sorry, there was an error with the submission!');
         $(form).removeClass('form--loading');
-        $(form).children('input').val('');
-        $('#send-button').val('Send');
       }
     });
 

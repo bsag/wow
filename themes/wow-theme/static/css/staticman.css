@@ -43,3 +43,11 @@ form--loading:before {
 .form--loading .form__spinner {
 	display: block;
 }
+
+.form__spinner {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 11;
+}
