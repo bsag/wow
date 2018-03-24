@@ -20,4 +20,8 @@ comments:
       type          : "date"
       options:
         format      : "iso8601"
+  reCaptcha:
+    enabled: true
+    siteKey: "6Lc4pU4UAAAAAFPxyolEbyNVRH-YhGXcE4HFPWCp"
+    secret: "n3FBPqXILBMVrRWLNRxcqbjDjaSdbRbmqmlxXb9dmijSd2KOeug2DSqHgof2H7ThIlP5H+jl32Vhg1FHPZLbd1SDTOLR3ywT5oW9GsmCMsIG2ZWpkj1VPAFzPwiTxQ4C5HYV3siqs/sT7pQLuQ8UkYFT+3630NcVpj2yp0mdmcg="
 
