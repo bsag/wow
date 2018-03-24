@@ -74,7 +74,7 @@
                type="text" name="fields[website]" placeholder="Website (optional)"/>
 
     {{ if .Site.Params.staticman.recaptcha }}
-      <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
+      <div class="g-recaptcha mv2" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
 
       <input id="send-button" class="mt2 pv2 input-reset ba br3 b--gray bg-transparent hover-bg-moon-gray pointer" 
