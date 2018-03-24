@@ -51,9 +51,6 @@
   <h3>Make a comment</h3>
 
   <form class="js-form w-100" method="post" action="{{ .Site.Params.staticman.api }}">
-    <div class="form__spinner mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active">
-      <img src="/images/ajax-loader.gif" alt="loading spinner">
-    </div>
     <input type="hidden" name="options[slug]" value="{{ replace .URL "/" "" }}">
     <input type="hidden" name="options[origin]" value="{{ .Permalink }}">
     <input type="hidden" name="options[parent]" value=""> 
@@ -76,6 +73,8 @@
     {{ if .Site.Params.staticman.recaptcha }}
       <div class="g-recaptcha mv2" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
+
+    <div class="form__spinner"><i class="fas fa-cog fa-spin"></i> Submitting comment...</div>
 
       <input id="send-button" class="mt2 pv2 input-reset ba br3 b--gray bg-transparent hover-bg-moon-gray pointer" 
                               type="submit" value="Send" />

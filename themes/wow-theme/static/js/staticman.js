@@ -14,7 +14,7 @@
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
-        showModal('Perfect !', 'Thanks for your comment! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/bsag/wow/pulls">here</a>.');
+        showModal('Perfect !', 'Thanks for your comment! It will show on the site once the site has been automatically rebuilt.');
         $(form).removeClass('form--loading');
         $(form).trigger("reset");
       },
