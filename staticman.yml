@@ -11,7 +11,7 @@ comments:
   path: "data/comments/{options.slug}"
   filename          : "comment-{@timestamp}"
   format            : "yaml"
-  moderation        : true
+  moderation        : false
   requiredFields    : ['name', 'email', 'comment']
   transforms:
     email           : md5
