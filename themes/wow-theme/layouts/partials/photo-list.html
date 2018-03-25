@@ -8,7 +8,7 @@
 	{{ range $paginator.Pages -}}
 				<a href="{{ .Permalink }}" class="h9 h9-m h5-l mw-100 mw6-l mr2-ns mb2 contain" data-tooltip="{{ .Title }}">
 					<img src="https://img.gs/bgvtpfnzjj/400x400/{{ $img }}{{ .Params.imageurl | safeURL }}"
-						 srcset="https://img.gs/bgvtpfnzjj/400x400/{{ $img }}{{ .Params.imageurl | safeURL }} 400w, https://img.gs/bgvtpfnzjj/400x400,2x/{{ $thumb }}{{ .Params.imageurl | safeURL }} 800w"
+						 srcset="https://img.gs/bgvtpfnzjj/400x400/{{ $img }}{{ .Params.imageurl | safeURL }} 400w, https://img.gs/bgvtpfnzjj/400x400,2x/{{ $img }}{{ .Params.imageurl | safeURL }} 800w"
 						 class="w-100 h9 h-100-l">
 				</a>
 	{{- end }}
