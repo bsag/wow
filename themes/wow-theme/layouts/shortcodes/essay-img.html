@@ -1,5 +1,7 @@
 <figure class="{{ .Get "class" }} mv3 mv5-ns center">
-    <img src="{{ .Site.Params.imgurl }}{{ .Get "id" }}.jpg" alt="{{ .Get "title"}}" />
+    <img src="https://img.gs/bgvtpfnzjj/1024x1024/{{ .Site.Params.imgurl }}{{ .Get "id" }}.jpg" 
+        srcset="https://img.gs/bgvtpfnzjj/1024x1024/{{ .Site.Params.imgurl }}{{ .Get "id" }}.jpg 1024w, https://img.gs/bgvtpfnzjj/1024x1024,2x/{{ .Site.Params.imgurl }}{{ .Get "id" }}.jpg 2048w" 
+        alt="{{ .Get "title"}}" />
     <figcaption>
         {{ .Get "title"}}
     </figcaption>

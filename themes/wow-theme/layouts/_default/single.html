@@ -5,7 +5,9 @@
 
 <div class="mw-100 mw-90-l">
 	<figure class="mw-100 mw-80-l flex flex-column justify-center center">
-		<img class="center contain" src="{{ $img }}{{ .Params.imageurl | safeURL }}" class="" style="max-height: 85vh;">
+		<img class="center contain" src="https://img.gs/bgvtpfnzjj/1024x1024/{{ $img }}{{ .Params.imageurl | safeURL }}" 
+									srcset="https://img.gs/bgvtpfnzjj/1024x1024/{{ $img }}{{ .Params.imageurl | safeURL }} 1024w, https://img.gs/bgvtpfnzjj/1024x1024,2x/{{ $img }}{{ .Params.imageurl | safeURL }} 2048w" 
+									class="" style="max-height: 85vh;">
 
 		<figcaption class="flex justify-center mt1">
 			<section class="tl f6 f4-l mr4">
