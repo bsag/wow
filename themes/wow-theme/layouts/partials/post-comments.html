@@ -59,35 +59,37 @@
     <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.secret }}"> 
     {{ end }}
 
-        <textarea class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+        <textarea class="input-reset ba b--moon-gray lh-copy w-100 mb3 pa2" 
                   name="fields[comment]" rows="6" type="text" 
                   placeholder="Comment. Markdown syntax works :-)"></textarea>
-        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3 pa2" 
                 name="fields[name]" type="text" placeholder="Name"/>
-        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3 pa2" 
                 type="email" name="fields[email]" 
                 placeholder="Email address (will not be shown publicly)"/>
-        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3" 
+        <input class="input-reset ba b--moon-gray lh-copy w-100 mb3 pa2" 
                type="text" name="fields[website]" placeholder="Website (optional)"/>
 
     {{ if .Site.Params.staticman.recaptcha }}
       <div class="g-recaptcha mv2" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
 
-    <div class="form__spinner"><i class="fas fa-cog fa-spin"></i> Submitting comment...</div>
-
-      <input id="send-button" class="mt2 pv2 input-reset ba br3 b--gray bg-transparent hover-bg-moon-gray pointer" 
-                              type="submit" value="Send" />
+      <button id="send-comment" 
+              class="mt2 pv2 input-reset ba br3 b--gray bg-gold hover-bg-moon-gray pointer"
+              type="submit">
+        <span id="standard" class="dib b">Send</span>
+        <span id="loading" class="dn bg-moon-gray b"><i class="fas fa-cog fa-spin"></i> Sending...</span>
+      </button>
   </form>
   </div>
 </section>
 
-<article class="modal">
+<article class="modal dn centered bg-moon-gray ba br3 b--moon-gray w-90 w-20-ns ph3 pv2">
   <div class="title">
-    <h2 class="js-modal-title"></h2>
+    <h2 class="js-modal-title mt0"></h2>
   </div>
   <div class="js-modal-text"></div>
-  <div>
-    <button class="js-close-modal">Close</button>
+  <div class="mt3">
+    <a class="js-close-modal f5 link dim br2 ba bw1 ph3 pv2 mb2 dib mid-gray bg-white" href="#">Close</a>
   </div>
 </article>
