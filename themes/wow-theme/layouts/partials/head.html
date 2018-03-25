@@ -11,22 +11,32 @@
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
     {{ .Hugo.Generator }}
-
+    {{ if .Site.Params.opengraph }}{{ template "_internal/opengraph.html" . }}{{ end }}
     <link rel="canonical" href="{{ .URL | absLangURL }}" />
     {{- if .RSSLink }}
     <link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}"> 
     {{- else }}
     <link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
     {{- end }}
-
+    
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
     {{- if .Site.Params.staticman -}}
-        <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" /> 
+    <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" /> 
     {{- end -}}
     {{- if .Site.Params.staticman.recaptcha -}}
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     {{- end -}}
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<!-- <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
+    <!-- {{ template "_internal/google_analytics_async.html" . }} -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105172836-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-105172836-4');
+    </script>
 </head>

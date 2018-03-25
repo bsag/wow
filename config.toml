@@ -19,6 +19,7 @@ paginate = 20
 [params]
 	author = "bsag"
 	description = "A collection of photographs that I'm relatively proud of."
+	opengraph = true
 	imgurl = "https://wingsopenwide-images.s3.amazonaws.com/"
 	thumbimgurl = "https://wingsopenwide-images.s3.amazonaws.com/thumbs/"
 	comments = true
