@@ -4,22 +4,22 @@
 {{ $img := .Site.Params.imgurl }}
 
 <div class="mw-100 mw-90-l">
-	<figure class="mw-100 mw-80-l flex flex-column justify-center center">
+	<figure class="mw-100 mw-80-l flex flex-column">
 		<img class="center contain" src="https://res.cloudinary.com/dulgwo6oh/image/fetch/w_1024,h_1024,c_limit/{{ $img }}{{ .Params.imageurl | safeURL }}" 
 									srcset="https://res.cloudinary.com/dulgwo6oh/image/fetch/w_1024,h_1024,c_limit/{{ $img }}{{ .Params.imageurl | safeURL }} 1024w, https://res.cloudinary.com/dulgwo6oh/image/fetch/w_1024,h_1024,c_limit/dpr_2.0/{{ $img }}{{ .Params.imageurl | safeURL }} 2048w" 
 									class="" style="max-height: 85vh;">
 
-		<figcaption class="flex justify-center mt1">
-			<section class="tl f6 f4-l mr4">
+		<figcaption class="flex flex-column flex-row-l justify-center mt1">
+			<section class="tc dib tr-l f6 f4-l mb2 mr3-l">
 				<span class="title">{{ .Title }}</span>
 			</section>
 
-			<section class="tc mr4">
-			<div class="hide-child">
-				<a class="link gray hover-teal">
+			<section class="tc dib mb2 mr3-l">
+			<div class="info">
+				<a id="js-info-link" class="link gray hover-teal" title="Show EXIF data">
 					<i class="fas fa-info-circle"></i>
 				</a>
-				<div class="child white pa3 bg-black-60 tl centered w-80 w-20-l">
+				<div id="js-info" class="dn white pa3 bg-black-60 tl centered w-80 w-20-l">
 					<span class="f5 f4-l lh-copy tl i">{{ .Params.description }}</span>
 					<table class="mt3">
 						<tbody>
@@ -49,17 +49,22 @@
 							</tr>
 						</tbody>
 					</table>
+					<div><a href="#" title="ESC to close" id="js-close-info" 
+							class="link br2 ba bw1 ph2 pv2 mt3 mb2 dib white bg-gray hover-bg-black">
+							<i class="fas fa-times-circle"></i> Close
+						</a>
+					</div>
 				</div><!-- popover-container -->
 			</section>
 
-			<section class="tr mr4">
+			<section class="tc dib tl-l mb2">
 				<span class="f6">
 					{{ if isset .Params "tags" -}}
 						{{ $tagsLen := len .Params.tags }} 
 							{{ if gt $tagsLen 0 -}} 
 								{{ range $k, $v := (sort .Params.tags) -}}
 									<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}" 
-										class="link near-black bg-moon-gray hover-bg-gold br-pill ph2 mr2">{{ . }}</a>
+										class="link near-black bg-moon-gray hover-bg-gold br-pill ph1 ph2-l mr1 mr2-l">{{ . }}</a>
 							{{- end }} 
 						{{- end }}
 					{{- end }}
@@ -73,13 +78,8 @@
 {{ partial "single-pagination" . }}
 
 {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }} 
-	{{ if .Site.DisqusShortname }}
-	<div class="disqus-comments w-100 w-90-m w-60-l mt5">
-		{{ template "_internal/disqus.html" . }}
-	</div>
-	{{ end }}
 	{{ if .Site.Params.staticman }}
-	<div class="staticman-comments">
+	<div class="staticman-comments w-90 w-90-m w-60-l center">
 		{{ partial "post-comments.html" . }}
 	</div>
 	{{ end }} 
