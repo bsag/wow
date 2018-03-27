@@ -1,13 +1,13 @@
 {{ define "main" -}}
 {{ $baseurl := .Site.BaseURL }}
-{{ $thumb := .Site.Params.thumbimgurl }}
+{{ $img := .Site.Params.imgurl }}
 <h2 class="title f3 lh-title">{{ .Title }}</h2>
 <div class="mt4 flex flex-wrap justify-center">
 
 {{ range .Data.Pages  }}
 <article class="br2 ba dark-gray b--black-20 ma4 w-100 w-50-m w-25-l mw5">
     {{ with .Params.cover }}
-        <img src="{{ $thumb }}{{ . }}" class="db w-100 br2 br--top">
+        <img src="{{ $img }}s/{{ . }}" class="db w-100 br2 br--top">
     {{ end }}
     <div class="pa2 ph3-ns pb3-ns">
         <div class="dt w-100 mt1">
