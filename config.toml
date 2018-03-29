@@ -21,7 +21,6 @@ paginate = 20
 	description = "A collection of photographs that I'm relatively proud of."
 	opengraph = true
 	imgurl = "https://wingsopenwide-images.s3.amazonaws.com/"
-	thumbimgurl = "https://wingsopenwide-images.s3.amazonaws.com/thumbs/"
 	comments = true
 	# The keywords will be added as a meta tag. Delimit them with a comma.
 	keywords = ""
