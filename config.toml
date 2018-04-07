@@ -4,10 +4,6 @@ title = "wings open wide"
 theme = "wow-theme"
 copyright = "This work is licensed under a Creative Commons Attribution-Non-Commercial ShareAlike 4.0 International License."
 
-[taxonomies]
-	tag = "tags"
-	album = "albums"
-
 # Enable comments by entering your Disqus shortname
 #disqusShortname = "spf13"
 # Add your tracking code to enable Google Analytics
@@ -15,6 +11,9 @@ googleAnalytics = "UA-105172836-4"
 # Posts per page
 paginate = 20
 
+[taxonomies]
+	tag = "tags"
+	album = "albums"
 
 [params]
 	author = "bsag"
