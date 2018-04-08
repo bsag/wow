@@ -31,3 +31,7 @@
 .site-title {
     font-family: 'Dancing Script', cursive;
 }
+
+blockquote {
+    font-style: italic;
+}
