@@ -7,8 +7,10 @@
 {{ range .Data.Pages  }}
 <article class="br2 ba dark-gray b--black-20 ma4 w-100 w-50-m w-25-l mw5">
     {{ with .Params.cover }}
-        <img src="{{ $img }}xxs/{{ . }}" 
-             srcset="{{ $img }}xxs/{{ . }} 400w, {{ $img }}xs/{{ . }} 800w, {{ $img }}s/{{ . }} 1200w"
+        <img src="https://ce84c173c.cloudimg.io/width/400/n/{{ $img }}xl/{{ . }}"
+             srcset="https://ce84c173c.cloudimg.io/width/400/n/{{ $img }}xl/{{ . }} 400w,
+                    https://ce84c173c.cloudimg.io/width/800/n/{{ $img }}xl/{{ . }} 800w,
+                    https://ce84c173c.cloudimg.io/width/1200/n/{{ $img }}xl/{{ . }} 1200w"
              class="db w-100 br2 br--top">
     {{ end }}
     <div class="pa2 ph3-ns pb3-ns">

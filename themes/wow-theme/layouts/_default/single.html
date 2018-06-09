@@ -3,10 +3,12 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ $img := .Site.Params.imgurl }}
 
-<div class="mw-100 mw-90-l">
-	<figure class="mw-100 mw-80-l flex flex-column">
-		<img class="center contain" src="{{ $img }}m/{{ .Params.imageurl | safeURL }}" 
-									srcset="{{ $img }}m/{{ .Params.imageurl | safeURL }} 1024w, {{ $img }}l/{{ .Params.imageurl | safeURL }} 2048w, {{ $img }}xl/{{ .Params.imageurl | safeURL }} 3072w"
+<div class="mw-100 mw-90-l w-100 w-90-l">
+	<figure class="flex flex-column">
+		<img class="center contain" src="https://ce84c173c.cloudimg.io/width/1024/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }}"
+									srcset="https://ce84c173c.cloudimg.io/width/1024/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }} 1024w,
+													https://ce84c173c.cloudimg.io/width/2048/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }} 2048w,
+													https://ce84c173c.cloudimg.io/width/3072/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }} 3072w"
 									class="" style="max-height: 85vh;">
 
 		<figcaption class="flex flex-column flex-row-l justify-center mt1">
@@ -49,7 +51,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<div><a href="#" title="ESC to close" id="js-close-info" 
+					<div><a href="#" title="ESC to close" id="js-close-info"
 							class="link br2 ba bw1 ph2 pv2 mt3 mb2 dib white bg-gray hover-bg-black">
 							<i class="fas fa-times-circle"></i> Close
 						</a>
@@ -60,12 +62,12 @@
 			<section class="tc dib tl-l mb2">
 				<span class="f6">
 					{{ if isset .Params "tags" -}}
-						{{ $tagsLen := len .Params.tags }} 
-							{{ if gt $tagsLen 0 -}} 
+						{{ $tagsLen := len .Params.tags }}
+							{{ if gt $tagsLen 0 -}}
 								{{ range $k, $v := (sort .Params.tags) -}}
-									<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}" 
+									<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}"
 										class="link near-black bg-moon-gray hover-bg-gold br-pill ph1 ph2-l mr1 mr2-l">{{ . }}</a>
-							{{- end }} 
+							{{- end }}
 						{{- end }}
 					{{- end }}
 				</span>
@@ -77,12 +79,12 @@
 
 {{ partial "single-pagination" . }}
 
-{{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }} 
+{{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
 	{{ if .Site.Params.staticman }}
 	<div class="staticman-comments w-90 w-90-m w-60-l center">
 		{{ partial "post-comments.html" . }}
 	</div>
-	{{ end }} 
+	{{ end }}
 {{ end }}
 
 {{- end }}

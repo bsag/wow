@@ -1,6 +1,8 @@
 <figure class="{{ .Get "class" }} mv3 mv5-ns center">
-    <img src="{{ .Site.Params.imgurl }}m/{{ .Get "id" }}.jpg" 
-        srcset="{{ .Site.Params.imgurl }}m/{{ .Get "id" }}.jpg 1024w, {{ .Site.Params.imgurl }}l/{{ .Get "id" }}.jpg 2048w, {{ .Site.Params.imgurl }}xl/{{ .Get "id" }}.jpg 3072w" 
+    <img src="https://ce84c173c.cloudimg.io/width/1024/n/{{ .Site.Params.imgurl }}xl/{{ .Get "id" }}.jpg"
+        srcset="https://ce84c173c.cloudimg.io/width/1024/n/{{ .Site.Params.imgurl }}xl/{{ .Get "id" }}.jpg 1024w,
+                https://ce84c173c.cloudimg.io/width/2048/n/{{ .Site.Params.imgurl }}xl/{{ .Get "id" }}.jpg 2048w,
+                https://ce84c173c.cloudimg.io/width/3072/n/{{ .Site.Params.imgurl }}xl/{{ .Get "id" }}.jpg 3072w"
         alt="{{ .Get "title"}}" />
     <figcaption>
         {{ .Get "title"}}
