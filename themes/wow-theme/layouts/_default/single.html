@@ -3,8 +3,8 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ $img := .Site.Params.imgurl }}
 
-<div class="mw-100 mw-90-l w-100 w-90-l">
-	<figure class="flex flex-column">
+<div class="mw-100 mw-90-l">
+	<figure class="mw-100 mw-80-l flex flex-column">
 		<img class="center contain" src="https://ce84c173c.cloudimg.io/width/1024/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }}"
 									srcset="https://ce84c173c.cloudimg.io/width/1024/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }} 1024w,
 													https://ce84c173c.cloudimg.io/width/2048/n/{{ $img }}xl/{{ .Params.imageurl | safeURL }} 2048w,
