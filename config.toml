@@ -7,7 +7,6 @@ copyright = "This work is licensed under a Creative Commons Attribution-Non-Comm
 # Enable comments by entering your Disqus shortname
 #disqusShortname = "spf13"
 # Add your tracking code to enable Google Analytics
-googleAnalytics = "UA-105172836-4"
 # Posts per page
 paginate = 20
 
